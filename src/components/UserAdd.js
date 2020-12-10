@@ -21,7 +21,7 @@ const UserAdd = ({ setUser }) => {
       position_id: position_id,
       photo: photo,
     }
-    //console.log(data);
+    
     
     //console.log(token)
     if (name, email, tel, position_id, photo) {
