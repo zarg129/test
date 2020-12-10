@@ -1,0 +1,192 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    width: 467px;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #212529;
+
+    margin-bottom: 26px;
+
+    &:focus {
+      opacity: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+    
+    &-radio {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 28px;
+      font-weight: bold;
+
+      align-self: flex-start;
+    }
+
+    &-photo {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 28px;
+      font-weight: bold;
+
+      &:focus {
+        outline: none;
+        border: 2px solid rgb(8, 218, 88);
+        color: black;
+      }
+    }
+
+    &-file {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin-top: 14px;
+      width: 100%;
+    }
+
+    &-custom {
+      width: 466px;
+      position: absolute;
+      margin-bottom: 38px;
+      right: 0;
+      left: 0;
+      height: 2.5rem;
+
+      line-height: 28px;
+      color: #555;
+      background-color: #fff;
+
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      box-shadow: inset 0 .2rem .4rem rgba(0,0,0,.05);
+      
+      &:after {
+        position: absolute;
+        padding-top: 5px;
+        padding-left: 15px;
+
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        line-height: 28px;
+        color: #b2b9c0;
+        font-weight: normal;
+        content: "Upload your photo";
+
+      }
+      
+      &:before {
+        position: absolute;
+        top: -.075rem;
+        right:0;
+        bottom: -.075rem;
+        //z-index: 6;
+        display: block;
+        content: "Browse";
+        padding-top: 5px;
+        padding-left: 18px;
+        padding-right: 18px;
+
+        line-height: 28px;
+        color: #555;
+        background-color: #eee;
+        text-align: center;
+
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }      
+    }
+  }
+
+  &__input {
+    border-radius: 3px;
+    max-width: 470px;
+    border: 1px solid #b2b9c0;
+
+    padding: 9px 13px;
+    margin-top: 13px;
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    color: black;
+    font-weight: normal;
+
+    &:focus {
+      outline: none;
+      border: 2px solid rgb(8, 218, 88);
+      color: black;
+    }
+
+    &:disabled {
+      background-color:  rgb(180, 179, 179);
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) {
+      border: 2px solid rgb(218, 33, 8);
+    }
+
+    &:invalid:focus:not(:placeholder-shown) {
+      border: 2px solid rgb(218, 33, 8);
+      & ~ .requirements {
+        max-height: 200px;
+      }
+    }
+    
+    &-radio {
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      background-color: #007bff;
+    }
+  }
+
+  .requirements {
+    color: #999;
+    max-height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    color: red;
+  }
+
+  &__text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    color: #b2b9c0;
+    font-weight: normal;
+  }
+
+  &__radio {
+    &-col {
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      margin-top: 25px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 220px;
+    margin-top: calc(17px + 38px);
+    position: relative;
+    justify-items: center;
+  }
+}

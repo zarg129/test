@@ -1,0 +1,73 @@
+.aquainted {
+  &__title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 50px;
+    text-align: center;
+    font-weight: normal;
+
+    color: #212529;
+
+    margin: 159px 0 68px;
+  }
+
+  &__container {
+    max-width: 1024px;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+
+    margin-bottom: 157px;
+  }
+
+  &__photo {
+    background-image: url("./Assets/man-laptop-v1.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    width: 339px;
+    height: 285px;
+
+  }
+
+
+  &__subtitle {
+    color: #898b8d;
+    
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: 400;
+    line-height: 29px;
+
+    margin-bottom: 25px;
+  }
+
+  &__body {
+    width: 551px;
+    margin-left: 50px;
+  }
+
+  &__text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+
+    color: #a6a5a5;
+
+    margin-bottom: 36px;
+  }
+
+  &__sign {
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+
+    color: #ef5b4c;
+
+    transition: 0.3s;
+    
+    &:hover {
+      color: rgb(235, 38, 38);
+    }
+  }
+}

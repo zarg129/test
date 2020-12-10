@@ -1,0 +1,79 @@
+.card {
+  justify-self: center;
+  height: auto;
+
+  &__photo {
+    justify-content: center;
+    align-items: center;
+    width: 84px;
+    height: 82px;
+
+    border-radius: 50%;
+
+    margin-bottom: 24px;
+  }
+
+  &__name {
+
+    word-break: break-all;
+    hyphens: auto;
+    max-width: 216px;
+    white-space: pre-line;
+    
+    width: 216px;
+    height: auto;
+    font-size: 24px;
+    color: #212529;
+    font-weight: 400;
+    line-height: 100%;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    
+    margin-bottom: 24px;
+  }
+
+  &__position {
+    width: 216px;
+    height: auto;
+    font-size: 16px;
+    line-height: 100%;
+    color: #4c4b4b;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+
+    margin-bottom: 15px;
+  }
+
+  &__email {
+    word-break: break-all;
+    hyphens: auto;
+
+    width: 216px;
+    height: auto;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4c4b4b;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+
+    margin-bottom: 12px;
+  }
+
+  &__phone {
+    word-break: break-all;
+    hyphens: auto;
+
+    width: 216px;
+    height: auto;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4c4b4b;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+
+    margin-bottom: auto;
+  }
+}
