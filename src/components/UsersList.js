@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import UserCard from './UserCard';
 import { GetUser } from '../api/users';
 
-const UsersList = ({ users, setPage, setCount, disabled, setUsers, count, page, setDisabled }) => {
+const UsersList = ({ users, setPage, disabled, setUsers, count, page, setDisabled }) => {
   
   const handleClick = () => {
     setPage((prevPage) => prevPage + 1)
-  }
+  };
 
   useEffect(() => {
     GetUser(count, page)
       .then(data => { 
+
         console.log(data)
+
         if (data.length < 6) {
           setDisabled(true)
         }
         setUsers(data)
       })      
-  }, [setUsers, setDisabled, count, page])
+  }, [setUsers, setDisabled, count, page, users]);    //here is my problem
 
 
   //console.log(users)

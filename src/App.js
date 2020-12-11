@@ -2,7 +2,6 @@ import React, {useState, useEffect, useLayoutEffect} from 'react';
 import UsersList  from './components/UsersList.js'
 import './App.scss';
 import UserAdd from './components/UserAdd.js';
-import { GetUser } from '../src/api/users';
 
 function  App() {
   const [users, setUsers] = useState([]);
@@ -10,39 +9,37 @@ function  App() {
   const [page, setPage] = useState(1);
   const [disabled, setDisabled] = useState(false);
   
- 
-
   return (
     <div className="App">
       <header className="header">
-      <div class="burger-menu">
+      <div className="burger-menu">
         <input id="burger-menu__toggle" type="checkbox" />
-        <label class="burger-menu__btn" for="burger-menu__toggle">
+        <label className="burger-menu__btn" htmlFor="burger-menu__toggle">
           <span></span>
         </label>
-        <ul class="burger-menu__list">
+        <ul className="burger-menu__list">
           <li>
-            <a href="#header" class="burger-menu__item">
+            <a href="#header" className="burger-menu__item">
               About me
             </a>
           </li>
           <li>
-            <a href="#info" class="burger-menu__item">
+            <a href="#info" className="burger-menu__item">
               Realtionships
             </a>
           </li>
           <li>
-            <a href="#consultation" class="burger-menu__item">
+            <a href="#consultation" className="burger-menu__item">
               Requirements
             </a>
           </li>
           <li>
-            <a href="#testimonials" class="burger-menu__item">
+            <a href="#testimonials" className="burger-menu__item">
               Users
             </a>
           </li>
           <li>
-            <a href="#contacts" class="burger-menu__item">
+            <a href="#contacts" className="burger-menu__item">
               Sign Up
             </a>
           </li>
