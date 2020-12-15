@@ -54,7 +54,7 @@ function  App() {
           <h1 className="header__title">Test assignment <br/> for Frontend <br/> Developer position</h1>
           <p className="header__text-mobile">We kindly remind you that your test assignment should be submitted as a link to github/bitbucket repository.</p>
           <p className="header__text">We kindly remind you that your test assignment should be submitted <br/>as a link to github/bitbucket repository. Please be patient, we consider<br/> and respond to every application that meets minimum requirements.<br/> We look forward to your submission. Good luck! The photo has to scale<br/> in the banner area on the different screens</p>
-          <button className="header__button button" type="button" title="sign up">Sign up now</button>
+          <a href="#footer"><button className="header__button button" type="button" title="sign up">Sign up now</button></a>
         </div>
       </div>
       <main className="main" id="main">
