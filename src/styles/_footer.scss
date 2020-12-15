@@ -1,4 +1,5 @@
 .footer {
+  width: 100%;
   &__container {
     max-width: 1024px;
     margin: 0 auto;
@@ -50,5 +51,18 @@
     color: #b2b9c0;
 
     margin-bottom: 19px;
+  }
+
+  &__notification {
+    position: relative;
+    bottom: 50%;
+  }
+}
+
+@media(max-width: 360px) {
+  .footer {
+   &__title {
+     margin: 15px;
+   }
   }
 }

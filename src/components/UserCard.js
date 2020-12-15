@@ -10,6 +10,6 @@ const UserCard = ({ photo, name, position, email, phone }) => {
       <p className="card__phone">{phone}</p>
     </>
   )
-}
+};
 
 export default UserCard;

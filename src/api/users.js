@@ -14,24 +14,24 @@ export async function getToken() {
   
   data = JSON.stringify(data);
   data = JSON.parse(data);
+
   return data;
-}
+};
 
 
-  export const addUser = (data, token) => {
-    const url = `${BASE_URL}/users`;
-    const formData = new FormData();
-    
-    for (let key in data) {
-      formData.append(key, data[key])
-    }
+export const addUser = (data, token) => {
+  const url = `${BASE_URL}/users`;
+  const formData = new FormData();
+  
+  for (let key in data) {
+    formData.append(key, data[key])
+  }
 
-    const action = {
-      method: 'POST',
-      headers: { token: token },
-      body: formData,
-    };
-    //console.log(formData);
-    return fetch(url, action);
+  const action = {
+    method: 'POST',
+    headers: { token: token },
+    body: formData,
   };
-
+  
+  return fetch(url, action);
+};

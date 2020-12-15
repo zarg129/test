@@ -190,3 +190,23 @@
     justify-items: center;
   }
 }
+
+@media(max-width: 360px) {
+  .form {
+    &__fields {
+      width: calc(100% - 15px);
+    }
+
+    &__label-radio {
+      margin: 15px;
+    }
+
+    &__label-photo {
+      margin: 15px;
+    }
+
+    &__label-custom {
+      width: 130%;
+    }
+  }
+}

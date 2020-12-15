@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import {addUser, GetUser, GetPosition, getToken } from '../api/users';
 
-const UserAdd = ({ setUser }) => {
+const UserAdd = ({ setUsers }) => {
   const [name, setName] = useState([]);
   const [tel, setTel] = useState([]);
   const [email, setEmail] = useState([]);
@@ -10,6 +10,7 @@ const UserAdd = ({ setUser }) => {
   const [photo, setPhoto] = useState([]);
   const [pos, setPos] = useState([]);
   const [token, setToken] = useState({ token: '' });
+  const [succes, setSucces] = useState(false);
   
   const  handleSubmit = (event) => {
     event.preventDefault();
@@ -20,29 +21,41 @@ const UserAdd = ({ setUser }) => {
       phone: tel,
       position_id: position_id,
       photo: photo,
-    }
-    //console.log(token)
+    };
+
     if (name, email, tel, position_id, photo) {
-    addUser(data, token)
-    GetUser()
-      .then(setUser)
+      addUser(data, token)
+        .then(res => {
+          if (res.ok === true) {
+            setSucces(true)
+            document.body.style.backgroundColor = '#b2b9c0';
+            document.body.style.opacity = '3';
+          }
+        })
+      GetUser(5, 1)
+      .then(res => setUsers([data, ...res]))
       .then(
         setName([]), 
         setEmail([]),
         setTel([]),
-        setPosition([]),
         setPhoto([]),
       )
-    }
+    };
+  };
 
-  } 
+  const handleClick = (event) => {
+    event.preventDefault();
+    setSucces(false);
+    document.body.style.backgroundColor = 'white';
+    document.body.style.opacity = '1';
+  };
 
   useEffect(() => {
     GetPosition()
       .then(res => setPos(res))
     getToken()
       .then(res => setToken(res.token))
-  }, [])
+  }, []);
 
   return (
     <>
@@ -115,7 +128,14 @@ const UserAdd = ({ setUser }) => {
                 <div className="form__radio-col">
                   {pos.map(elem => (
                     <div className="form__radio" key={elem.id}>
-                      <input className="form__input-radio" name ="position" type="radio" id={elem.id} value={elem.id} onChange={event => setPosition(event.target.value)} />
+                      <input 
+                        className="form__input-radio" 
+                        name ="position" 
+                        type="radio" 
+                        id={elem.id} 
+                        value={elem.id} 
+                        onChange={event => setPosition(+event.target.value)} 
+                      />
                       <label className="form__label-radio" htmlFor={elem.id}>{elem.name}</label>
                     </div>
                   ))}
@@ -140,11 +160,23 @@ const UserAdd = ({ setUser }) => {
               </label>
               </label>
               <button type="submit" className="form__button button">Sign up now</button>
+              {succes
+                ? <div className="footer__notification notification">
+                    <h3 className="notification__title">Congratulations</h3>
+                    <p className="notification__text">You have succesfully passed the registaration!</p>
+                    <button 
+                      className="notification__button button" 
+                      type="button" 
+                      onClick={(event) => handleClick(event)}
+                    >Great</button>
+                  </div>
+                : ''
+              }
           </form>
       </div>
       </div>
     </>
   )
-}
+};
 
 export default UserAdd;

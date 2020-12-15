@@ -11,18 +11,12 @@ const UsersList = ({ users, setPage, disabled, setUsers, count, page, setDisable
   useEffect(() => {
     GetUser(count, page)
       .then(data => { 
-
-        console.log(data)
-
         if (data.length < 6) {
           setDisabled(true)
         }
         setUsers(data)
       })      
-  }, [setUsers, setDisabled, count, page, users]);    //here is my problem
-
-
-  //console.log(users)
+  }, [setUsers, setDisabled, count, page]);
   
   return (
     <div className="users__container">
@@ -36,11 +30,16 @@ const UsersList = ({ users, setPage, disabled, setUsers, count, page, setDisable
         ))}
       </ul>
       {disabled 
-        ? <button className="users__button button" disabled="disabled" type="button" onClick={() => handleClick()}>Disabled</button>
+        ? <button 
+            className="users__button button" 
+            disabled="disabled" 
+            type="button" 
+            onClick={() => handleClick()}
+          >Disabled</button>
         : <button className="users__button button" type="button" onClick={() => handleClick()}>Show more</button>
       }
     </div>
   )
-}
+};
 
 export default UsersList;
